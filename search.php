@@ -86,6 +86,6 @@ function selection_bd($connexion,$bd)
 	}
 
 ?>
-<a href="bienvenu.html"> Back to home </a>
+<a href="home.html"> Back to home </a>
 </body>
 </html>
