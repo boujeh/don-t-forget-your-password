@@ -49,7 +49,7 @@ $cur = mysql_query($sql);
 		</table>
 		
 		<a href='add_new.html'>Go to add website</a>
-        <a href="bienvenu.html">Back to home </a>
+        <a href="home.html">Back to home </a>
 		<input type="submit" value="Update" />
         <a href='del.php'>go to delete </a>
 </form>
