@@ -4,21 +4,23 @@ require_once("config/config.php");
 
 require_once("templates/header.php");
 
-// url parameters
-$q = $_POST['q'];
+require_once("functions/paginate.php");
 
-// search query
-$query = "SELECT * FROM $tb_name WHERE site LIKE '%$q%'";
+// list query
+$query = "SELECT * FROM $tb_name LIMIT $start, $limit";
+
 ?>  
 
 <div class="container">
 
+  <legend>Logins list</legend>
+
   <?php if ($result = $db->query($query)) { ?>
 
     <?php if (mysqli_num_rows($result) > 0) { ?>
+    
+      <?php echo $pagination; ?>
 
-      <legend>Logins including "<em><strong><?php echo $q; ?></strong></em>" term</legend>
-  
       <div class="table-responsive">
         <table class="table">
           <thead>
@@ -49,19 +51,21 @@ $query = "SELECT * FROM $tb_name WHERE site LIKE '%$q%'";
           </tbody>
         </table>
       </div>
-  
+
+      <?php echo $pagination; ?>
+    
     <?php } else { ?>
-      
-      <p class="lead">Your search - <em><strong><?php echo $q; ?></strong></em> - did not match any item.</p>
-          
+
+      <p class="lead">You haven't add any login item yet. <a href="new.php">Add item.</a></p>
+
     <?php } ?>
-      
-  <?php
+
+  <?php 
     /* free result set */
     $result->free();
   }
   ?>
-  
+
 </div> <!-- /container -->
 
 <?php  
