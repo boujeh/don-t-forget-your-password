@@ -2,16 +2,10 @@
 
 // Connection's Parameters
 $db_host="localhost";
-
-// $db_user="database_username";
-// $db_pass="database_password";
-// $db_name="database_name";
-// $tb_name="tb_name";
-
-$db_user="root";
-$db_pass="root";
-$db_name="dfup";
-$tb_name="logins";
+$db_user="database_username";
+$db_pass="database_password";
+$db_name="database_name";
+$tb_name="tb_name"; // table name to create if it doesn't exist
 
 // connect to MySQL
 $mysqli = new mysqli($db_host, $db_user, $db_pass);
