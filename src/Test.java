@@ -11,7 +11,7 @@ public class Test {
     private int x;
     public Test ()
     {
-        
+        System.out.println("test");
     }
     
 }
